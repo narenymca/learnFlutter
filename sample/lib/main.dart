@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:sample/pages/login_page.dart';
 
-import 'home_page.dart';
+import 'pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
+ MyApp({Key? key}) : super(key: key);
 
   int days = 95;
   String name = "tuesday";
@@ -17,10 +19,25 @@ class MyApp extends StatelessWidget {
 
   var month = "jan";
 
+ // MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      darkTheme: ThemeData(
+        //brightness: Brightness.dark
+        primarySwatch: Colors.deepOrange,
+      ),
+      initialRoute: "/login",
+      routes: {
+        "/": (context) => const LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => const LoginPage(),
+      },
     );
   }
 }
