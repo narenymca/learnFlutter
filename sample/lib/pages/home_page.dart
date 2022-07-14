@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 class HomePage extends StatelessWidget {
   int days = 95;
 
@@ -17,9 +19,7 @@ class HomePage extends StatelessWidget {
         child: Text("welcome to $days this app by narender"),
       ),
       // ignore: prefer_const_constructors
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
-
-
