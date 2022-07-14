@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sample/pages/login_page.dart';
 
 import 'pages/home_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +10,7 @@ void main() {
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
- MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   int days = 95;
   String name = "tuesday";
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   var month = "jan";
 
- // MyApp({Key? key}) : super(key: key);
+  // MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
       ),
       darkTheme: ThemeData(
         //brightness: Brightness.dark
