@@ -26,7 +26,7 @@ class MyDrawer extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.deepPurple,
                 ),
-                accountName: Text("Narender Kumar"),
+                accountName: const Text("Narender Kumar"),
                 accountEmail: const Text("naren_ymca07@yahoo.com"),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(imageUrl),
