@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sample/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -55,10 +56,12 @@ class LoginPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        print("Hi this is narender");
+                        Navigator.pushNamed(context, MyRoutes.homeRoute);
                       },
                       style: TextButton.styleFrom(),
-                      child: Text("Login")),
+                      child: Text(
+                        "Login",
+                      )),
                 ],
               ),
             ),
