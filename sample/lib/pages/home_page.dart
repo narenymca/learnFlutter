@@ -45,11 +45,49 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
-            ? ListView.builder(
-                itemCount: CatalogModel.items?.length,
-                itemBuilder: (context, index) => ItemWidget(
-                  item: CatalogModel.items![index],
+            ? GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
                 ),
+                itemCount: CatalogModel.items?.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final item = CatalogModel.items![index];
+
+                  return Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18)),
+                      clipBehavior: Clip.antiAlias,
+                      child: GridTile(
+                        header: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: const BoxDecoration(
+                              color: Colors.deepPurple,
+                            ),
+                            child: Text(
+                              item.name,
+                              style: const TextStyle(
+                                color: Colors.white,
+                              ),
+                            )),
+                        footer: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: const BoxDecoration(
+                              color: Colors.black,
+                            ),
+                            child: Text(
+                              
+                              item.price.toString(),
+                              style: const TextStyle(
+
+                                
+                                color: Colors.white,
+                              ),
+                            )),
+                        child: Image.network(item.image),
+                      ));
+                },
               )
             : Center(
                 child: CircularProgressIndicator(),
