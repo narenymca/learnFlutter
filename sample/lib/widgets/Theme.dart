@@ -42,7 +42,7 @@ class MyTheme {
             elevation: 0.0,
             centerTitle: true,
             titleTextStyle: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontSize: 20.0,
               letterSpacing: 1.0,
             ),
