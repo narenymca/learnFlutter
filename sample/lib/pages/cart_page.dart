@@ -39,7 +39,14 @@ class _CartTotal extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                           Theme.of(context).bottomAppBarColor)),
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content: "Buying is not suppored yet in the app"
+                              .text
+                              .make()),
+                    );
+                  },
                   child: "Buy".text.make())
               .w32(context)
         ],
