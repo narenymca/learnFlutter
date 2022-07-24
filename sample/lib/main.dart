@@ -10,7 +10,7 @@ import 'pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(VxState(store: Mystore(), child: MyApp()));
+  runApp(VxState(store: MyStore(), child: MyApp()));
 }
 
 // ignore: must_be_immutable
