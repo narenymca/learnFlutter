@@ -37,7 +37,7 @@ class CatalogList extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     catalog.name.text.bold.lg
-                        .color(MyTheme.darkBluishColor)
+                        .color(Theme.of(context).indicatorColor)
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).make(),
                     10.heightBox,
@@ -51,15 +51,15 @@ class CatalogList extends StatelessWidget {
                             style: ButtonStyle(
                               shape: MaterialStateProperty.all(StadiumBorder()),
                               backgroundColor: MaterialStateProperty.all(
-                                  MyTheme.darkBluishColor),
+                                  context.theme.bottomAppBarColor),
                             ),
-                            child: "Buy".text.make())
+                            child: "Add to Cart".text.make())
                       ],
                     ).pOnly(right: 16.0)
                   ],
                 ))
               ],
-            )).white.roundedLg.square(150).make().py16(),
+            )).color(context.cardColor).roundedLg.square(150).make().py16(),
           );
         });
   }
