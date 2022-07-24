@@ -14,11 +14,11 @@ class CatalogImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.network(image)
         .box
+        .square(100)
         .rounded
         .p24
         .color(context.canvasColor)
         .make()
-        .p16()
-        .w40(context);
+        .p16();
   }
 }

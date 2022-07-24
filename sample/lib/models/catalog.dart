@@ -1,4 +1,6 @@
 class CatalogModel {
+  
+  
   static List<Item>? items;
 
   Item getById(int id) =>
