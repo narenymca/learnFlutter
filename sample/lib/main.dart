@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:sample/core/store.dart';
 import 'package:sample/pages/cart_page.dart';
 import 'package:sample/pages/login_page.dart';
 import 'package:sample/utils/routes.dart';
 import 'package:sample/widgets/Theme.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import 'pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: Mystore(), child: MyApp()));
 }
 
 // ignore: must_be_immutable
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.homeRoute ,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => const LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
